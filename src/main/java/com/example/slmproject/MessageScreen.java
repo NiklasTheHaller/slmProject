@@ -7,11 +7,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MessageScreen {
 
-    @RequestMapping("/message")
-    public String msg(@RequestParam String msg) {
+    public String message;
 
-        return msg;
+    @RequestMapping("/message/edit")
+    public String setMsg(@RequestParam String msg) {
+
+       message = msg;
+       return message;
     }
+
+    @RequestMapping("/message")
+    public String displayMsg() {
+
+        return message;
+    }
+
+
 
 
 }

@@ -9,15 +9,26 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SlmProjectApplicationTests {
 
     @Test
-    void msgTest(){
+    void setmsgTest(){
         MessageScreen calculatorController = new MessageScreen();
 
         String msg = "Test Message";
 
-
-        String result = calculatorController.msg(msg);
+        String result = calculatorController.setMsg(msg);
 
         assertEquals("Test Message", result);
     }
+
+    @Test
+    void displaymsgTest(){
+        MessageScreen calculatorController = new MessageScreen();
+
+        String msg = calculatorController.message;
+
+        String result = calculatorController.setMsg(msg);
+
+        assertEquals( msg, result);
+    }
+
 
 }
